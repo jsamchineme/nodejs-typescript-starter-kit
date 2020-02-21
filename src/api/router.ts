@@ -1,9 +1,8 @@
 import { Router } from 'express';
+import authRouter from 'src/modules/auth/router';
 
 const baseRouter = Router();
 
-baseRouter.get('*', (req, res) => {
-  return res.status(200).send({ error: 'not found' });
-});
+baseRouter.use('/auth', authRouter);
 
 export default baseRouter;

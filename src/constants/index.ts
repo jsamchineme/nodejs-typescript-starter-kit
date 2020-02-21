@@ -12,6 +12,7 @@ import {
   TEST_DB_NAME,
   TEST_DB_HOST,
   TEST_DB_PORT,
+  SALT_ROUNDS,
 } from './env';
 
 export {
@@ -28,4 +29,5 @@ export {
   TEST_DB_NAME,
   TEST_DB_HOST,
   TEST_DB_PORT,
+  SALT_ROUNDS,
 };
