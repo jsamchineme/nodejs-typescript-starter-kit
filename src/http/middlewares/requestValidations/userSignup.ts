@@ -1,4 +1,3 @@
-import * as joi from '@hapi/joi';
 import httpException from 'src/http/httpException';
 import userSignupSchema from './joiSchemas/userSignupSchema';
 import generateCustomErrors from './joiSchemas/helpers/generateCustomErrors';
@@ -11,10 +10,10 @@ import generateCustomErrors from './joiSchemas/helpers/generateCustomErrors';
  */
 const validateUserSignup = async (req, res, next) => {
   try {
-    await joi.validate(req.body, userSignupSchema);
+    await userSignupSchema.validate(req.body);
     next();
-  } catch (error) {
-    return next(generateCustomErrors(error, httpException));
+  } catch (errors) {
+    return next(generateCustomErrors(errors, httpException));
   }
 };
 

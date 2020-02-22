@@ -1,3 +1,4 @@
+import * as Joi from '@hapi/joi';
 import {
   email,
   password,
@@ -6,12 +7,14 @@ import {
   username,
 } from './validationFields/user';
 
-const schema = {
+
+const schema = Joi.object({
   email,
   password,
   firstname,
   lastname,
   username,
-};
+});
+
 
 export default schema;

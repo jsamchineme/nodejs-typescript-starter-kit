@@ -16,11 +16,12 @@ export enum ModelName {
 }
 
 export enum ValidationErrorType {
-  ANY_REQUIRED = 'any.required',
-  ANY_EMPTY = 'any.empty',
-  STRING_MAX = 'string.max',
-  STRING_MIN = 'string.min',
-  STRING_EMAIL = 'string.email',
+  REQUIRED = 'any.required',
+  UNKNOWN = 'any.unknown',
+  EMPTY = 'string.empty',
+  MAX = 'string.max',
+  MIN = 'string.min',
+  EMAIL = 'string.email',
 }
 
 export enum ErrorTypeCode {
@@ -29,12 +30,14 @@ export enum ErrorTypeCode {
   _03 = '03',
   _04 = '04',
   _05 = '05',
+  _06 = '06',
 }
 
 export interface ErrorTypeCodeMap {
-  [ValidationErrorType.ANY_EMPTY]: ErrorTypeCode._01,
-  [ValidationErrorType.ANY_REQUIRED]: ErrorTypeCode._02,
-  [ValidationErrorType.STRING_EMAIL]: ErrorTypeCode._03,
-  [ValidationErrorType.STRING_MAX]: ErrorTypeCode._04,
-  [ValidationErrorType.STRING_MIN]: ErrorTypeCode._05,
+  [ValidationErrorType.EMPTY]: ErrorTypeCode._01,
+  [ValidationErrorType.REQUIRED]: ErrorTypeCode._02,
+  [ValidationErrorType.EMAIL]: ErrorTypeCode._03,
+  [ValidationErrorType.MAX]: ErrorTypeCode._04,
+  [ValidationErrorType.MIN]: ErrorTypeCode._05,
+  [ValidationErrorType.UNKNOWN]: ErrorTypeCode._06,
 }
