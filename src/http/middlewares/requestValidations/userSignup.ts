@@ -1,4 +1,4 @@
-import * as joi from 'joi';
+import * as joi from '@hapi/joi';
 import httpException from 'src/http/httpException';
 import userSignupSchema from './joiSchemas/userSignupSchema';
 import generateCustomErrors from './joiSchemas/helpers/generateCustomErrors';

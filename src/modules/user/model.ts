@@ -1,7 +1,7 @@
 import { Model, DataTypes, Op } from 'sequelize';
 import sequelize from 'src/database/sequelize';
 import hashPassword from 'src/utils/hashPassword';
-import bcrypt from 'bcryptjs';
+import * as bcrypt from 'bcryptjs';
 
 enum Status {
   VERIFIED = 'verified',
@@ -32,13 +32,23 @@ User.init({
     autoIncrement: true,
     primaryKey: true,
   },
-  name: {
+  firstname: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  lastname: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
   },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
   password: {
     type: DataTypes.STRING,
