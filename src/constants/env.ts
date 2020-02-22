@@ -20,6 +20,8 @@ const {
   TEST_DB_HOST,
   TEST_DB_PORT,
   SALT_ROUNDS,
+  TOKEN_EXPIRTY_TIME,
+  JWT_SECRET,
 } = process.env;
 
 export {
@@ -37,4 +39,6 @@ export {
   TEST_DB_HOST,
   TEST_DB_PORT,
   SALT_ROUNDS,
+  TOKEN_EXPIRTY_TIME,
+  JWT_SECRET,
 };

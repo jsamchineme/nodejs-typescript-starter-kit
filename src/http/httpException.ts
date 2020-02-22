@@ -7,7 +7,7 @@ const httpException = {
    * @param {Object} customMessage - object of http error
    * @returns {Object} - the error response object
    */
-  handle(error, customMessage) {
+  handle(error, customMessage?) {
     const { status, message, code } = error;
 
     this.response = {
